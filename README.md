@@ -1,4 +1,4 @@
-Simuvirtu
+Simuvirtu (**NOT COMPLETED**)
 
 Trade smart. Learn fast. Risk nothing.
 
