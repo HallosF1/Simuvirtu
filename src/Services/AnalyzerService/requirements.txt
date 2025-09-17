@@ -1,0 +1,14 @@
+requests
+websockets
+ccxt
+pandas
+numpy 
+matplotlib 
+mplfinance 
+ta 
+scikit-learn
+transformers 
+fastapi 
+uvicorn 
+sqlalchemy 
+psycopg2
