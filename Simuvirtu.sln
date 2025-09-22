@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnalyzerService", "Analyzer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simuvirtu", "src\Services\Simuvirtu\Simuvirtu.csproj", "{7B673451-0BF2-CE68-5990-92B6D836E0C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "src\Gateway\ApiGateway\ApiGateway.csproj", "{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{7B673451-0BF2-CE68-5990-92B6D836E0C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B673451-0BF2-CE68-5990-92B6D836E0C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B673451-0BF2-CE68-5990-92B6D836E0C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 		{DE2111F8-C4DF-4C7B-B5FD-EF0A9C6B5450} = {598C0F95-B6D1-4B56-978E-FD8478548B2A}
 		{ED3C9B21-2CF0-43ED-AFC7-8E93DD8CD370} = {598C0F95-B6D1-4B56-978E-FD8478548B2A}
 		{7B673451-0BF2-CE68-5990-92B6D836E0C8} = {DE2111F8-C4DF-4C7B-B5FD-EF0A9C6B5450}
+		{D8C710AD-0CF9-4A99-9898-4C6950D3CF8A} = {A7B3673E-AD27-43EF-8DEA-6E1BFA9097DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08A971AD-558B-42A5-84BB-AC2A1258A91B}
