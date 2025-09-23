@@ -17,15 +17,16 @@ namespace Simuvirtu.Controllers
     {
         private readonly ITokenService _tokenService;
         private readonly SignInManager<AppUser> _signInManager;
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ApplicationDbContext dbContext, ILogger<AccountController> logger, ITokenService tokenService) : base(userManager, dbContext, logger)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IUnitOfWork uow, ILogger<AccountController> logger, ITokenService tokenService) : base(userManager, uow, logger)
         {
             _tokenService = tokenService;
             _signInManager = signInManager;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserCreate userCreate)
+        public async Task<IActionResult> Register([FromBody] UserCreate userCreate, CancellationToken ct = default)
         {
+            await using var tx = await _uow.BeginTransactionAsync(ct);
             try
             {
                 if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -45,8 +46,8 @@ namespace Simuvirtu.Controllers
                         TotalAddedMoney = 0,
                         AvailableMoney = 0
                     };
-                    _dbContext.Portfolios.Add(portfolio);
-                    await _dbContext.SaveChangesAsync();
+                    _uow.SaveChangesAsync(ct).Wait();
+                    await _uow.CommitAsync(tx, ct);
                     if (roleResult.Succeeded)
                     {
                         return Ok(new NewUserDto

@@ -17,7 +17,7 @@ namespace Simuvirtu.Controllers
     {
         private readonly IPortfolioService _portfolioService;
 
-        public PortfolioController(UserManager<AppUser> userManager, ApplicationDbContext dbContext, ILogger<PortfolioController> logger, IPortfolioService portfolioService) : base(userManager, dbContext, logger)
+        public PortfolioController(UserManager<AppUser> userManager, IUnitOfWork uow, ILogger<PortfolioController> logger, IPortfolioService portfolioService) : base(userManager, uow, logger)
         {
             _portfolioService = portfolioService;
         }

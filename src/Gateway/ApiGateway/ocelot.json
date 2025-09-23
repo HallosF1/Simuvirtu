@@ -4,10 +4,7 @@
       "DownstreamPathTemplate": "/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5246
-        }
+        { "Host": "localhost", "Port": 5246 }
       ],
       "UpstreamPathTemplate": "/app/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post" ],
@@ -23,13 +20,26 @@
       "DownstreamPathTemplate": "/analysis/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 8000
-        }
+        { "Host": "localhost", "Port": 8000 }
       ],
       "UpstreamPathTemplate": "/analysis/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "JwtBearer",
+        "AllowedScopes": []
+      },
+      "DownstreamHeaderTransform": {
+        "Authorization": "Bearer {Token}"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/signals/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        { "Host": "localhost", "Port": 8000 }
+      ],
+      "UpstreamPathTemplate": "/signals/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "JwtBearer",
         "AllowedScopes": []

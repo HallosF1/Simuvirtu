@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Simuvirtu.Data;
-using Simuvirtu.Models;
 using Simuvirtu.Interfaces;
+using Simuvirtu.Models;
 using Simuvirtu.Services;
+using Simuvirtu.UnitOfWorks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddHttpClient<ICryptoService, CryptoService>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
